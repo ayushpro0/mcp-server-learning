@@ -1,0 +1,19 @@
+{
+  "servers": [
+    {
+      "name": "math-server",
+      "description": "Performs math operations like addition of numbers",
+      "type": "websocket",
+      "endpoint": "ws://localhost:8000",
+      "tools": ["add_numbers"]
+    },
+    {
+      "name": "filesystem-server",
+      "description": "Lists and reads files from the local filesystem",
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "--root", "."],
+      "tools": ["list_files", "read_file"]
+    }
+  ]
+}
